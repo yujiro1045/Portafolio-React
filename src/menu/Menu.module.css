@@ -1,0 +1,40 @@
+.nav_mobile {
+  display: none;
+}
+
+.header {
+  z-index: 9;
+  width: 85%;
+  height: 8vh;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 15% 70% 15%;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+span {
+  background: linear-gradient(180deg, #3f5efb, #fc466b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
