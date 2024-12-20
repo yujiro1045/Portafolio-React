@@ -1,12 +1,13 @@
 .Home {
   width: 85%;
-  height: 92vh;
+  height: auto; /* Cambiado de 92vh a auto para mayor flexibilidad */
   margin: auto;
   display: grid;
   grid-template-columns: 65% 35%;
   justify-self: center;
   align-items: center;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
+  gap: 20px; /* Añadido un gap entre los elementos */
 }
 
 h1,
@@ -18,7 +19,6 @@ h2 {
 
 .dev {
   width: 420px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -45,15 +45,10 @@ h2 {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -mz-border-radius: 50%;
-  -o-border-radius: 50%;
 }
 
 .buttons {
   width: 420px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -66,8 +61,6 @@ h2 {
 }
 
 .buttons div {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +76,6 @@ h2 {
   font-size: 1.3rem;
   border: 2.5px solid #fc466b;
   border-radius: 10px;
-  border-image-slice: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,4 +84,85 @@ h2 {
 .buttons div a:hover {
   background: linear-gradient(180deg, #3f5efb, #fc466b);
   color: #fff;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+
+@media (max-width: 1024px) {
+  .Home {
+    grid-template-columns: 1fr; /* Cambia a una columna */
+    text-align: center;
+  }
+
+  .dev,
+  .buttons {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dev h1 {
+    font-size: 2.5rem; /* Ajusta el tamaño del texto */
+  }
+
+  .dev p {
+    font-size: 1rem;
+  }
+
+  .buttons h2 {
+    font-size: 2.5rem;
+  }
+
+  .buttons div a {
+    font-size: 1.2rem;
+    width: 120px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Home {
+    padding-bottom: 5vh;
+  }
+
+  .dev h1 {
+    font-size: 2rem;
+  }
+
+  .dev p {
+    font-size: 0.9rem;
+  }
+
+  .buttons h2 {
+    font-size: 2rem;
+  }
+
+  .buttons div a {
+    font-size: 1rem;
+    width: 100px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Home {
+    gap: 15px;
+  }
+
+  .dev h1 {
+    font-size: 1.8rem;
+  }
+
+  .dev p {
+    font-size: 0.8rem;
+  }
+
+  .buttons h2 {
+    font-size: 1.8rem;
+  }
+
+  .buttons div a {
+    font-size: 0.9rem;
+    width: 90px;
+    height: 28px;
+  }
 }

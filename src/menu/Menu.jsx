@@ -1,35 +1,37 @@
-import styles from "../menu/Menu.module.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Networks from "./Networks";
+import styles from "../menu/Menu.module.css";
 
 const Menu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <span className={styles.logo}>LOGO</span>
 
-      <nav className={styles.nav}>
-        <Link to="/">
-          <span>I</span>nicio
-        </Link>
-        <Link to="/projects">
-          <span>P</span>royectos
-        </Link>
-        <Link to="/experience">
-          <span>E</span>xperiencia
-        </Link>
-        <Link to="/about">
-          <span>S</span>obre mí
-        </Link>
+      {/* Menú estándar */}
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.nav_open : ""}`}>
+        <Link to="/">Inicio</Link>
+        <Link to="/projects">Proyectos</Link>
+        <Link to="/experience">Experiencia</Link>
+        <Link to="/about">Sobre mí</Link>
       </nav>
 
-      <nav className={styles.nav_mobile}>
-        <Link>
-          <img src="" alt="" />
-        </Link>
-        <Link>
-          <img src="" alt="" />
-        </Link>
-      </nav>
+      {/* Menú hamburguesa */}
+      <button
+        className={styles.hamburger}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span className={styles.hamburger_line}></span>
+        <span className={styles.hamburger_line}></span>
+        <span className={styles.hamburger_line}></span>
+      </button>
 
       <Networks />
     </header>

@@ -1,0 +1,59 @@
+.about {
+  width: 85%;
+  height: 92vh;
+  margin: auto;
+  padding: 10vh 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+}
+
+.about .intro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about .intro .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about .intro p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.about .intro .points div {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(224, 64, 224);
+  border-radius: 50%;
+}
+
+.about .intro .points {
+  display: flex;
+  gap: 5px;
+}
+
+.about .edu h2 {
+  align-self: center;
+}
+
+.about .edu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about .edu div {
+  border: 2px solid black;
+  border-radius: 20px;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
